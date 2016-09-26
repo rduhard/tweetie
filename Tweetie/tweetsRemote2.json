@@ -1,0 +1,62 @@
+[
+      
+       {
+       "guid": "8444462e-698f-426f-97ed-e5d7a5106bfc",
+       "firstname": "Alyce",
+       "lastname": "Spence",
+       "username": "@greenmonster",
+        "tweet": "It's GameDay! #LAvsTB",
+        "timestamp": 1474821077
+
+       },
+       {
+       "guid": "2a94d0c5-6bb2-4ec7-9d08-8b8b51c537f7",
+       "firstname": "Parks",
+       "lastname": "Alexander",
+       "username": "@greenmonster",
+        "tweet": "Ready to hit the road for our Silver and Black business trip.",
+        "timestamp": 1474822997
+       },
+       {
+       "guid": "02575ebf-30af-47ee-baeb-0aaf2e9e9275",
+       "firstname": "Autumn",
+       "lastname": "Vincent",
+       "username": "@tbones",
+         "tweet": "Last night's Hot Hatha class was so relaxing!",
+         "timestamp": 1474825217
+       },
+       {
+       "guid": "15f5b259-db2d-411d-bbeb-64ec303c4059",
+       "firstname": "Bauer",
+       "lastname": "Manning",
+       "username": "@trixareforkids",
+         "tweet": "My colleagues and I fact-checked Trump for a week. We found a lie every 3.15 mins -- 87 erroneous statements",
+         "timestamp": 1474825937
+       },
+       {
+       "guid": "5cab25e7-1afa-4ee7-a8fa-a6b2b8d6c39e",
+       "firstname": "Bauer",
+       "lastname": "Manning",
+       "username": "@trixareforkids",
+        "tweet": "It's a huge problem that so many people in this country don't take Trump's evil seriously.",
+        "timestamp": 1474828937
+
+       },
+       {
+       "guid": "8d68ae4b-073e-4024-baeb-420258fdc943",
+       "firstname": "Bauer",
+       "lastname": "Manning",
+       "username": "@trixareforkids",
+       "tweet": "96% of trailing millennials use YouTube at least monthly.",
+        "timestamp": 1474829117
+       },
+       {
+       "guid": "260246a9-6fbf-4710-be80-df29b3460bf3",
+       "firstname": "Nixon",
+       "lastname": "Oneil",
+       "username": "@ldizzy",
+     "tweet": "You either die a hero or live long enough to see yourself become dual cup holders",
+     "timestamp": 1474829837
+    }
+]
+

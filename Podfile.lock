@@ -1,0 +1,34 @@
+PODS:
+  - BrightFutures (4.0.0):
+    - Result (~> 2.0)
+  - OHHTTPStubs (5.2.1):
+    - OHHTTPStubs/Default (= 5.2.1)
+  - OHHTTPStubs/Core (5.2.1)
+  - OHHTTPStubs/Default (5.2.1):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (5.2.1):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (5.2.1):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (5.2.1)
+  - OHHTTPStubs/Swift (5.2.1):
+    - OHHTTPStubs/Core
+  - Result (2.1.3)
+  - SwiftyJSON (2.4.0)
+
+DEPENDENCIES:
+  - BrightFutures (= 4.0.0)
+  - OHHTTPStubs
+  - OHHTTPStubs/Swift
+  - SwiftyJSON (= 2.4.0)
+
+SPEC CHECKSUMS:
+  BrightFutures: ddeb9a2747c101914d7b2cf5094acfd5fb67395c
+  OHHTTPStubs: 3a42f25c00563b71355ac73112ba2324e9e6cef4
+  Result: 18e1a7597fbcca5923c565b40a25a98afafdee02
+  SwiftyJSON: 96918c1bf505efa50c4f72957018dd3452090c9c
+
+COCOAPODS: 0.39.0

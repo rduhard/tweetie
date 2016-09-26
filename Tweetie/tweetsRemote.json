@@ -1,0 +1,44 @@
+ [
+  {
+  "guid": "551d536d-63a7-4d05-92e9-066d18c09b5f",
+  "firstname": "Parks",
+  "lastname": "Alexander",
+  "username": "@greenmonster",
+  "tweet": "What possible purpose would an unbiased debate moderator pointing out egregious lies possibly serve?",
+  "timestamp": 1474808537
+  },
+  {
+  "guid": "26bc35d5-6332-4844-9f80-81b80a309ee2",
+  "firstname": "Bauer",
+  "lastname": "Manning",
+  "username": "@trixareforkids",
+  "tweet": "The most terrifying aspect of a Trump presidency is there is no rhyme or reason to any of his stances. You literally can't predict anything.",
+  "timestamp": 1474811537
+  
+  },
+  {
+  "guid": "2b8d7a20-29d4-4fdf-9d50-32bf801a8897",
+  "firstname": "Cochran",
+  "lastname": "Taylor",
+  "username": "@tbones",
+  "tweet": "Buy, eat, earn, repeat. Buy, eat, earn, repeat.",
+  "timestamp": 1474812857
+  },
+  {
+  "guid": "e291a502-e408-4a37-9d46-45e9f8a3c4b7",
+  "firstname": "Bauer",
+  "lastname": "Manning",
+  "username": "@trixareforkids",
+  "tweet": "Fresh greens on the farm with moms.",
+  "timestamp": 1474815377
+  },
+  {
+  "guid": "3d013eba-3146-4bfd-9099-6e4d2adbb0a8",
+  "firstname": "Bauer",
+  "lastname": "Manning",
+  "username": "@trixareforkids",
+  "tweet": "Boost your #swiftlang development with IDE that can refactor your code.",
+  "timestamp": 1474820357
+  
+  }
+  ]

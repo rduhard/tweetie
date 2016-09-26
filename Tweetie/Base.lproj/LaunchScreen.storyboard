@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-0k-cKN">
+                                <rect key="frame" x="154" y="145" width="250" height="314"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eB3-nK-InK">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="265"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Rainbow_Bird" translatesAutoresizingMaskIntoConstraints="NO" id="jrB-zo-LVB">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="265"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="9Mt-9r-hoL"/>
+                                                    <constraint firstAttribute="width" secondItem="jrB-zo-LVB" secondAttribute="height" multiplier="382:405" id="aKO-9P-otH"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bEY-NE-4ip">
+                                        <rect key="frame" x="68" y="270" width="114" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tweetie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5n-e9-4j2">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="44"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="36"/>
+                                                <color key="textColor" red="0.24705882370471954" green="0.14901961386203766" blue="0.39215686917304993" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eB3-nK-InK" firstAttribute="leading" secondItem="BQe-0k-cKN" secondAttribute="leading" id="KBK-3Q-opI"/>
+                                    <constraint firstItem="eB3-nK-InK" firstAttribute="top" secondItem="BQe-0k-cKN" secondAttribute="top" id="fIt-8a-iw6"/>
+                                    <constraint firstAttribute="trailing" secondItem="eB3-nK-InK" secondAttribute="trailing" id="s5d-AP-rRl"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49803921579999999" green="0.3960784376" blue="0.56862747670000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BQe-0k-cKN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="2" id="V4e-6o-PU7"/>
+                            <constraint firstItem="BQe-0k-cKN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bNR-TL-U1l"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479" y="387"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Rainbow_Bird" width="382" height="405"/>
+    </resources>
+</document>

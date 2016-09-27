@@ -43,6 +43,8 @@ I used a lastFetchTime value on each request to the "network" for remote request
 
 I did not limit the amount of tweets to fetch, however, in a real world scenario we would likely want to page the requests and only request X at a time as we scroll back in the history.
 
+I only included 2 files of "remote" data so every time after the first remote fetch it will continue to load the second set of data (based on lastFetchTime), this is obviously wrong and was just to show the use of lastFetchTime. This request would be an api request using the lastFetchTime. You will see duplicated data each time it goes to fetch remotely, this is why. 
+
 ## Shortcuts
 
 I chose not to provide user feedback in the UI while asyncrhonous calls were being made. i.e. if fetching tweets could take some time, i might provide an indication to the user that the app was working on it. 
@@ -51,6 +53,8 @@ I chose to update the entire table with the new data when retrieved instead of u
 ## Would like to do
 
 I would have preferred if I designed the asynchronous calls using Result instead of the Optional error route I went. Using Result with appropriate errors results in much easier to understand code and easier processing of the results from the asyncrhonous call (i.e. switch on success or each type of failure that could occur). 
+
+Creating reusable commands for fetching, sending and saving tweets that could be triggered from anywhere instead of just methods inside the worker. i.e. SendTweetUseCase or SendTweetCommand (using the command pattern). I prefer this to create a clear separation of work and makes testing more straightforward. 
 
 ## Tests
 Tests can be created for each of the boundary methods in the VIP section, easily identifiable in each file by their input and output protocols.

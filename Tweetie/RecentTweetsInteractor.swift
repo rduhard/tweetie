@@ -6,6 +6,7 @@ import BrightFutures
 
 protocol RecentTweetsInteractorInput {
     func loadTweets(request: RecentTweets.Request)
+    func refreshTweets(request: RecentTweets.Request)
     func signOut(request: RecentTweets.SignOut.Request)
 }
 
@@ -20,7 +21,7 @@ class RecentTweetsInteractor: RecentTweetsInteractorInput {
     var worker: TweetsWorker!
   
     func loadTweets(request: RecentTweets.Request) {
-        
+       
         guard authorizedUser() else {
             let response = RecentTweets.Response(tweets: [], error: .NotAuthorized)
             self.output.presentTweets(response)
@@ -34,15 +35,29 @@ class RecentTweetsInteractor: RecentTweetsInteractorInput {
                 
                 let response = RecentTweets.Response(tweets: tweets, error: .NoError)
                 self.output.presentTweets(response)
+            }
+        }
+
+    }
+        
+    func refreshTweets(request: RecentTweets.Request) {
+        
+        guard authorizedUser() else {
+            let response = RecentTweets.Response(tweets: [], error: .NotAuthorized)
+            self.output.presentTweets(response)
+            return
+        }
+        
+        Queue.global.async() {
+            
+            self.worker = TweetsWorker(gateway: UserDefaultsTweetGateway())
+            self.worker.syncRemoteTweets() { (error) in
                 
-                self.worker.syncRemoteTweets() { (error) in
-                    
-                    self.worker.fetchLocalTweets() { tweets in
-                        let response = RecentTweets.Response(tweets: tweets, error: error)
-                        self.output.presentTweets(response)
-                    }
-                    
+                self.worker.fetchLocalTweets() { tweets in
+                    let response = RecentTweets.Response(tweets: tweets, error: error)
+                    self.output.presentTweets(response)
                 }
+                
             }
             
         }

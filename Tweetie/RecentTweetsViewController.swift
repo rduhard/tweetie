@@ -14,6 +14,7 @@ protocol RecentTweetsViewControllerInput {
 
 protocol RecentTweetsViewControllerOutput {
     func loadTweets(request: RecentTweets.Request)
+    func refreshTweets(request: RecentTweets.Request)
     func signOut(request: RecentTweets.SignOut.Request)
 }
 
@@ -32,7 +33,7 @@ class RecentTweetsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-//        fetchTweetsOnLoad()
+        fetchTweetsOnLoad()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -53,7 +54,7 @@ class RecentTweetsViewController: UITableViewController {
     
     private func refreshTweets() {
         let request = RecentTweets.Request()
-        output.loadTweets(request)
+        output.refreshTweets(request)
     }
     
     @IBAction func signOutClicked(sender: AnyObject) {

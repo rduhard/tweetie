@@ -18,6 +18,7 @@ I used the VIP architecture to create this app. While I'm more familiar with VIP
 
 It's ideal setup for unit testing as it creates small modules that are more easily testable. The protocol approach allows dependencies not under test to be swapped out for simple mocks.
 
+I also don't use a lot of comments in my code. I prefer to have the code organized and named in such a way that they're mostly unnecessary. I use extensions where I can to separate work within a class to make the code more organized and readable. 
 
 ## Network Simulation
 
@@ -47,8 +48,11 @@ I only included 2 files of "remote" data so every time after the first remote fe
 
 ## Shortcuts
 
-I chose not to provide user feedback in the UI while asyncrhonous calls were being made. i.e. if fetching tweets could take some time, i might provide an indication to the user that the app was working on it. 
+I chose not to provide user feedback in the UI while asyncrhonous calls were being made. i.e. if fetching tweets could take some time, i might provide an indication to the user that the app was working on it.
+
 I chose to update the entire table with the new data when retrieved instead of updating only the rows that changed. This was a time saving effort knowing that the data set was small.
+
+I did not add the sent tweets to the "remote data" file so they are not returned on subsequent sign ins of the app. They are saved with the local data after a "successful" send action. This is time saver (not adding file i/o work). 
 
 ## Would like to do
 

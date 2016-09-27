@@ -9,7 +9,7 @@ protocol RecentTweetsViewControllerInput {
     var tweetData: RecentTweets.ViewModel? { get set }
     
     func displayTweets(tweets: RecentTweets.ViewModel)
-    func signedOut()
+    func signedOut(tweets: RecentTweets.ViewModel)
 }
 
 protocol RecentTweetsViewControllerOutput {
@@ -100,8 +100,10 @@ extension RecentTweetsViewController:  RecentTweetsViewControllerInput {
         showLogin()
     }
     
-    func signedOut() {
+    func signedOut(tweets: RecentTweets.ViewModel) {
+        tweetData = tweets
         showLogin()
+        tableView.reloadData()
     }
     
     

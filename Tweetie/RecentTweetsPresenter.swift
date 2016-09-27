@@ -12,7 +12,7 @@ protocol RecentTweetsPresenterInput {
 protocol RecentTweetsPresenterOutput: class {
     func displayTweets(viewModel: RecentTweets.ViewModel)
     func displayLogin()
-    func signedOut()
+    func signedOut(viewModel: RecentTweets.ViewModel)
 }
 
 
@@ -38,7 +38,8 @@ class RecentTweetsPresenter: RecentTweetsPresenterInput {
     }
     
     func presentSignOut(response: RecentTweets.SignOut.Response) {
-        output.signedOut()
+        let viewModel = RecentTweets.ViewModel(tweets: [])
+        output.signedOut(viewModel)
     }
     
     private func prepareTweetItems(response: RecentTweets.Response) -> [RecentTweets.ViewModel.ViewableTweetItem] {

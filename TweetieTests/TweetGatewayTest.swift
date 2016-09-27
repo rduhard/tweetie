@@ -1,10 +1,7 @@
 //
 //  TweetGatewayTest.swift
 //  Tweetie
-//
-//  Created by Rebecca Duhard on 9/25/16.
-//  Copyright © 2016 Rebecca. All rights reserved.
-//
+
 
 @testable import Tweetie
 import XCTest
@@ -13,13 +10,13 @@ class TweetGatewayTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        setUpTweets()
+//        setUpTweets()
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        resetTweets()
+//        resetTweets()
     }
     
     func testExample() {

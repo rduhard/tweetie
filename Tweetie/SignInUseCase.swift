@@ -24,6 +24,7 @@ class SignInUseCase {
             var signInError: SignInError = .NoError
             guard let authorizedUser = self.authUser(username, password: password) else {
                 signInError = .InvalidCredentials
+                completionHandler(signInError)
                 return
             }
             

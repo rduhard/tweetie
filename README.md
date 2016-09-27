@@ -34,7 +34,7 @@ All requests for work were done on a background thread using GCD and all UI upda
 ## Authentication
 Authentication is mocked out and the user must match the given credentials. Anything else and they will be presented with an Invalid Credentials error. 
 
-User data is also stored in NSUserDefaults as a serialized User object. This I would normally store in the database as well, along with any other pertinent logged in user data. A token could be stored in teh keychain as well if authorization provided one. In addition to the user object I have a key that indicates if the user is logged in. This key is used to detect if the application launches to the Recents Tweets (main) page or if they should be asked to Sign In by presenting the sign in page. The check for auth could also be the presence of the User object or a valid token. Another option would be that all requests to the web service return an unauthorized error if the token or credentials have expired, triggering the user to sign in again. 
+User data is also stored in NSUserDefaults as a serialized User object. This I would normally store in the database as well, along with any other pertinent logged in user data. A token could be stored in the keychain as well if authorization provided one. In addition to the user object I have a key that indicates if the user is logged in. This key is used to detect if the application launches to the Recents Tweets (main) page or if they should be asked to Sign In by presenting the sign in page. The check for auth could also be the presence of the User object or a valid token. Another option would be that all requests to the web service return an unauthorized error if the token or credentials have expired, triggering the user to sign in again. 
 
 On Sign out, all local user data is cleared from storage. Signing in again will refetch the recent tweets remotely and store again in local storage.
 
@@ -53,8 +53,11 @@ I chose to update the entire table with the new data when retrieved instead of u
 I would have preferred if I designed the asynchronous calls using Result instead of the Optional error route I went. Using Result with appropriate errors results in much easier to understand code and easier processing of the results from the asyncrhonous call (i.e. switch on success or each type of failure that could occur). 
 
 ## Tests
-Tests can be created for each of the boundary methods, easily identifiable in each file by their input and output protocols.
+Tests can be created for each of the boundary methods in the VIP section, easily identifiable in each file by their input and output protocols.
 
-Most of the tests for the Presenter and View involve spies that simply ensure the methods boundary were called. Beyond that there isn't much to test as they simply pass data to and from. 
+Most of the tests for the Presenter and View involve spies that simply ensure the boundary methods were called. Beyond that there isn't much to test as they simply pass data to and from. 
 
-The more important tests will take place on the business rules/use cases. These include loadTweets(), saveTweet(), saveTweets()
+The more important/interesting tests will take place on the business rules/use cases and possibly entities.
+
+I did not create tests for all of the methods or all the classes that should be tested but tried to create test names to indicate the things that would/should be tested. 
+

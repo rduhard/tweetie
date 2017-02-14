@@ -25,7 +25,7 @@ class TweetsWorkerTests: XCTestCase {
     }
 
     func test_FetchLocalTweets_WhenNoTweets_ShouldReturnEmptyArray() {
-        let expectation = expectationWithDescription("Fetch Empty Tweets")
+        let expectation = self.expectation(description: "Fetch Empty Tweets")
         var localTweets: [Tweet] = []
         sut?.fetchLocalTweets() { tweets in
             localTweets = tweets
@@ -40,8 +40,8 @@ class TweetsWorkerTests: XCTestCase {
         
     }
     
-    private func waitForExpectation() {
-        waitForExpectationsWithTimeout(2, handler: nil)
+    fileprivate func waitForExpectation() {
+        waitForExpectations(timeout: 2, handler: nil)
     }
 
 }
@@ -50,14 +50,14 @@ class DummyTweetGateway: TweetGateway {
     
     var tweets: [Tweet] = []
     
-    func fetchAllTweets(completionHandler: ([Tweet], TweetsError) -> Void) {
+    func fetchAllTweets(_ completionHandler: ([Tweet], TweetsError) -> Void) {
         completionHandler([], .NoError)
     }
     
-    func saveTweets(tweets: [Tweet]) {
+    func saveTweets(_ tweets: [Tweet]) {
     }
     
-    func saveTweet(tweet: Tweet) {
+    func saveTweet(_ tweet: Tweet) {
         tweets.append(tweet)
     }
     

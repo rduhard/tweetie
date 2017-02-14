@@ -3,7 +3,6 @@
 //  Tweetie
 
 import Foundation
-import BrightFutures
 
 class SignInUseCase {
     
@@ -18,12 +17,12 @@ class SignInUseCase {
         self.gateway = gateway
     }
     
-    func signIn(username: String, password: String, completionHandler: (SignInError -> Void)) {
+    func signIn(_ username: String, password: String, completionHandler: @escaping ((SignInError) -> Void)) {
         
-        Queue.global.after(.In(1)) {
-            var signInError: SignInError = .NoError
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
+            var signInError: SignInError = .noError
             guard let authorizedUser = self.authUser(username, password: password) else {
-                signInError = .InvalidCredentials
+                signInError = .invalidCredentials
                 completionHandler(signInError)
                 return
             }
@@ -33,7 +32,7 @@ class SignInUseCase {
         }
     }
     
-    private func authUser(username: String, password: String) -> User? {
+    fileprivate func authUser(_ username: String, password: String) -> User? {
         guard username == self.validUsername && password == self.validPassword else {
             return nil
         }

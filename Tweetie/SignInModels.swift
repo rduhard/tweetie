@@ -3,9 +3,9 @@
 //  Tweetie
 
 enum SignInError: String {
-    case NoError = ""
-    case InvalidCredentials = "Invalid Credentials, please try again."
-    case Unknown = "Unknown error signing in, please try again."
+    case noError = ""
+    case invalidCredentials = "Invalid Credentials, please try again."
+    case unknown = "Unknown error signing in, please try again."
 }
 
 struct SignIn {

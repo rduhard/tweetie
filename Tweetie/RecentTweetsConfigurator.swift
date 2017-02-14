@@ -12,20 +12,11 @@ extension RecentTweetsPresenter: RecentTweetsInteractorOutput { }
 
 class RecentTweetsConfigurator {
   
-    class var sharedInstance: RecentTweetsConfigurator {
-        struct Static {
-          static var instance: RecentTweetsConfigurator?
-          static var token: dispatch_once_t = 0
-        }
+    static let sharedInstance = RecentTweetsConfigurator()
     
-        dispatch_once(&Static.token) {
-          Static.instance = RecentTweetsConfigurator()
-        }
-        
-        return Static.instance!
-      }
-  
-    func configure(viewController: RecentTweetsViewController) {
+    private init() {}
+
+    func configure(_ viewController: RecentTweetsViewController) {
     
         let presenter = RecentTweetsPresenter()
         presenter.output = viewController

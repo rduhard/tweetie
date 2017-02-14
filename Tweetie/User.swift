@@ -10,7 +10,7 @@ struct User {
     let verified: Bool
     
     var dictionaryDescription: [String: AnyObject] {
-        return ["username":"\(username)","firstname":"\(firstname)","lastname":"\(lastname)","verified":verified]
+        return ["username":"\(username)" as AnyObject,"firstname":"\(firstname)" as AnyObject,"lastname":"\(lastname)" as AnyObject,"verified":verified as AnyObject]
     }
     
     init(username: String, firstname: String, lastname: String, verified: Bool) {

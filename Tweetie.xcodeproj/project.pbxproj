@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7FA6C5855AB1866B61162F83 /* Pods_Tweetie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C96A266BD7FD11DC9EDE78 /* Pods_Tweetie.framework */; };
+		2B5C25EB20FBECAB245A3EA0 /* Pods_TweetieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08215D4C3D6B835BC5385DD /* Pods_TweetieTests.framework */; };
+		47B17CF821FDACE9B75FBF73 /* Pods_Tweetie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3BA3BDCF166A62D3C259F8 /* Pods_Tweetie.framework */; };
 		B3012AEF1D948BB6000672B3 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3012AEE1D948BB6000672B3 /* Tweet.swift */; };
 		B3012AF21D948BFD000672B3 /* Tweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3012AF11D948BFD000672B3 /* Tweeter.swift */; };
 		B3012AF41D94C74C000672B3 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3012AF31D94C74C000672B3 /* TweetCell.swift */; };
@@ -62,9 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		381DBBAD7B44202F6C88B1C5 /* Pods-Tweetie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweetie/Pods-Tweetie.release.xcconfig"; sourceTree = "<group>"; };
-		4C3CDC54FCA096062D04EB93 /* Pods-Tweetie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tweetie/Pods-Tweetie.debug.xcconfig"; sourceTree = "<group>"; };
-		55C96A266BD7FD11DC9EDE78 /* Pods_Tweetie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweetie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6354B1BBE0153347F6E35885 /* Pods-Tweetie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tweetie/Pods-Tweetie.debug.xcconfig"; sourceTree = "<group>"; };
+		AA3BA3BDCF166A62D3C259F8 /* Pods_Tweetie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweetie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3012AEE1D948BB6000672B3 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		B3012AF11D948BFD000672B3 /* Tweeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweeter.swift; sourceTree = "<group>"; };
 		B3012AF31D94C74C000672B3 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
@@ -110,6 +110,10 @@
 		B39240021D943A6A005D2C7E /* TweetieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39240081D943A6A005D2C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B39240111D9440F1005D2C7E /* Rainbow_Bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Rainbow_Bird.png; path = Assets.xcassets/Rainbow_Bird.png; sourceTree = "<group>"; };
+		CA33BBC5E0B73F0123973129 /* Pods-Tweetie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweetie/Pods-Tweetie.release.xcconfig"; sourceTree = "<group>"; };
+		D08215D4C3D6B835BC5385DD /* Pods_TweetieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E17CE09CA6F9E0B2F5890313 /* Pods-TweetieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetieTests/Pods-TweetieTests.release.xcconfig"; sourceTree = "<group>"; };
+		E3056A003759FF766A28FE14 /* Pods-TweetieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetieTests/Pods-TweetieTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FA6C5855AB1866B61162F83 /* Pods_Tweetie.framework in Frameworks */,
+				47B17CF821FDACE9B75FBF73 /* Pods_Tweetie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,12 +129,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5C25EB20FBECAB245A3EA0 /* Pods_TweetieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12716EBB8C23991CDB5C48B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA3BA3BDCF166A62D3C259F8 /* Pods_Tweetie.framework */,
+				D08215D4C3D6B835BC5385DD /* Pods_TweetieTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5CAC35FBBC490A9D4328D3E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6354B1BBE0153347F6E35885 /* Pods-Tweetie.debug.xcconfig */,
+				CA33BBC5E0B73F0123973129 /* Pods-Tweetie.release.xcconfig */,
+				E3056A003759FF766A28FE14 /* Pods-TweetieTests.debug.xcconfig */,
+				E17CE09CA6F9E0B2F5890313 /* Pods-TweetieTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B3012AF01D948BBB000672B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,8 +256,8 @@
 				B3923FF01D943A6A005D2C7E /* Tweetie */,
 				B39240051D943A6A005D2C7E /* TweetieTests */,
 				B3923FEF1D943A6A005D2C7E /* Products */,
-				C78FE04A1632009FDD87F701 /* Pods */,
-				EDE5C69A4384BFE756653566 /* Frameworks */,
+				5CAC35FBBC490A9D4328D3E2 /* Pods */,
+				12716EBB8C23991CDB5C48B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,23 +298,6 @@
 			path = TweetieTests;
 			sourceTree = "<group>";
 		};
-		C78FE04A1632009FDD87F701 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4C3CDC54FCA096062D04EB93 /* Pods-Tweetie.debug.xcconfig */,
-				381DBBAD7B44202F6C88B1C5 /* Pods-Tweetie.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		EDE5C69A4384BFE756653566 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				55C96A266BD7FD11DC9EDE78 /* Pods_Tweetie.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,12 +305,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B392400B1D943A6A005D2C7E /* Build configuration list for PBXNativeTarget "Tweetie" */;
 			buildPhases = (
-				9C8907A518815CEA5217503E /* Check Pods Manifest.lock */,
+				62755D089299DFD3D788F44B /* [CP] Check Pods Manifest.lock */,
 				B3923FEA1D943A6A005D2C7E /* Sources */,
 				B3923FEB1D943A6A005D2C7E /* Frameworks */,
 				B3923FEC1D943A6A005D2C7E /* Resources */,
-				3E10D6B1F6B1DA234F26A638 /* Embed Pods Frameworks */,
-				B1AEFC94AB75DF82DE7C4560 /* Copy Pods Resources */,
+				A93527030584C6A45C1EAC3A /* [CP] Embed Pods Frameworks */,
+				700C63E6CF4B9AD1102467B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,9 +325,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B392400E1D943A6A005D2C7E /* Build configuration list for PBXNativeTarget "TweetieTests" */;
 			buildPhases = (
+				3C63674945092FAB2FB4B76E /* [CP] Check Pods Manifest.lock */,
 				B3923FFE1D943A6A005D2C7E /* Sources */,
 				B3923FFF1D943A6A005D2C7E /* Frameworks */,
 				B39240001D943A6A005D2C7E /* Resources */,
+				55EB3C55D75ABC7C8F009A9C /* [CP] Embed Pods Frameworks */,
+				503ECA459EABA5DAE093843F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,14 +349,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Rebecca;
 				TargetAttributes = {
 					B3923FED1D943A6A005D2C7E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 					B39240011D943A6A005D2C7E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = B3923FED1D943A6A005D2C7E;
 					};
 				};
@@ -393,49 +406,94 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E10D6B1F6B1DA234F26A638 /* Embed Pods Frameworks */ = {
+		3C63674945092FAB2FB4B76E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tweetie/Pods-Tweetie-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9C8907A518815CEA5217503E /* Check Pods Manifest.lock */ = {
+		503ECA459EABA5DAE093843F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TweetieTests/Pods-TweetieTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1AEFC94AB75DF82DE7C4560 /* Copy Pods Resources */ = {
+		55EB3C55D75ABC7C8F009A9C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TweetieTests/Pods-TweetieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62755D089299DFD3D788F44B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		700C63E6CF4B9AD1102467B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tweetie/Pods-Tweetie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A93527030584C6A45C1EAC3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tweetie/Pods-Tweetie-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -534,8 +592,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -579,8 +639,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -599,54 +661,61 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		B392400C1D943A6A005D2C7E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C3CDC54FCA096062D04EB93 /* Pods-Tweetie.debug.xcconfig */;
+			baseConfigurationReference = 6354B1BBE0153347F6E35885 /* Pods-Tweetie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Tweetie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rebecca.Tweetie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		B392400D1D943A6A005D2C7E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 381DBBAD7B44202F6C88B1C5 /* Pods-Tweetie.release.xcconfig */;
+			baseConfigurationReference = CA33BBC5E0B73F0123973129 /* Pods-Tweetie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Tweetie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rebecca.Tweetie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		B392400F1D943A6A005D2C7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3056A003759FF766A28FE14 /* Pods-TweetieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TweetieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rebecca.TweetieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tweetie.app/Tweetie";
 			};
 			name = Debug;
 		};
 		B39240101D943A6A005D2C7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E17CE09CA6F9E0B2F5890313 /* Pods-TweetieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TweetieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rebecca.TweetieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tweetie.app/Tweetie";
 			};
 			name = Release;

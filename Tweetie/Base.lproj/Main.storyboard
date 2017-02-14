@@ -1,10 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RKF-Xc-hQz">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RKF-Xc-hQz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Tweetie-->
@@ -12,56 +16,47 @@
             <objects>
                 <tableViewController id="2vp-uX-KZl" customClass="RecentTweetsViewController" customModule="Tweetie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d6u-lz-zlf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCellIdentifier" rowHeight="102" id="UIR-ZD-vVW" userLabel="Tweet Cell" customClass="TweetCell" customModule="Tweetie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="102"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UIR-ZD-vVW" id="oUi-Wd-cCx">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="101.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kAS-rj-kpM" userLabel="Content Stack View">
-                                            <rect key="frame" x="13" y="13" width="574" height="75"/>
+                                            <rect key="frame" x="13" y="13" width="349" height="75"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pev-dm-YNc" userLabel="Details Stack View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="574" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="17"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="elj-fR-G7Y" userLabel="Name Stack View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="244" height="35"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="249" height="17"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longer name here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kh2-bg-rw7">
-                                                                    <rect key="frame" x="0.0" y="9" width="117" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="119.5" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                    <color key="textColor" red="0.41960784792900085" green="0.20784313976764679" blue="0.52549022436141968" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="0.41960784792900085" green="0.20784313976764679" blue="0.52549022436141968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
-                                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="17"/>
-                                                                    </variation>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@rduhard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3y-pf-Lba">
-                                                                    <rect key="frame" x="127" y="10" width="117" height="16"/>
+                                                                    <rect key="frame" x="129.5" y="0.5" width="119.5" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <color key="textColor" red="0.27450980390000002" green="0.24313725489999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="0.27450980390000002" green="0.24313725489999999" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
-                                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="130" y="1" width="120" height="16"/>
-                                                                    </variation>
                                                                 </label>
                                                             </subviews>
-                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="0.0" y="0.0" width="249" height="17"/>
-                                                            </variation>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tNX-nX-c56" userLabel="Timestamp Stack View">
-                                                            <rect key="frame" x="510" y="10" width="64" height="16"/>
+                                                            <rect key="frame" x="285" y="0.5" width="64" height="16"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqi-rd-kVj">
                                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -73,13 +68,13 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Je-DL-k5o">
-                                                    <rect key="frame" x="0.0" y="39" width="574" height="36"/>
+                                                    <rect key="frame" x="0.0" y="21" width="349" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjH-56-pvy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="574" height="36"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="349" height="54"/>
                                                             <string key="text">Lorem ipsum dolor sit amet, cum et dicit offendit senserit. In insolens delicata expetendis usu, no wisi tractatos efficiantur eam, semper v</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" red="0.14901961386203766" green="0.094117648899555206" blue="0.23137255012989044" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.14901961386203766" green="0.094117648899555206" blue="0.23137255012989044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -118,13 +113,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Tweetie" id="Yx7-io-u8s">
                         <barButtonItem key="leftBarButtonItem" title="Sign Out" id="OTZ-Fp-b5k">
-                            <color key="tintColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="signOutClicked:" destination="2vp-uX-KZl" id="nXA-04-l5P"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="d3h-Qf-ywN">
-                            <color key="tintColor" red="0.94901961088180542" green="0.94117647409439087" blue="0.95686274766921997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.94901961088180542" green="0.94117647409439087" blue="0.95686274766921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="composeTweet:" destination="2vp-uX-KZl" id="0dj-uW-vc2"/>
                                 <segue destination="Uz6-nj-PnR" kind="presentation" id="5jG-MC-fFE"/>
@@ -145,24 +140,24 @@
                         <viewControllerLayoutGuide type="bottom" id="Ycu-YE-YXW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NW1-eO-6mQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0s-aU-akD">
-                                <rect key="frame" x="173" y="123" width="54" height="34"/>
+                                <rect key="frame" x="160.5" y="180" width="54" height="34"/>
                                 <state key="normal" title="Tweet!">
-                                    <color key="titleColor" red="0.49803921579999999" green="0.3960784376" blue="0.56862747670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.49803921579999999" green="0.3960784376" blue="0.56862747670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <state key="disabled">
-                                    <color key="titleColor" red="0.67058825489999996" green="0.6549019814" blue="0.70588237050000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.67058825489999996" green="0.6549019814" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="sendTweetClicked:" destination="e6W-JM-dCm" eventType="touchUpInside" id="t3i-Qu-6xI"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1lE-ZQ-yFn">
-                                <rect key="frame" x="20" y="20" width="360" height="90"/>
-                                <color key="backgroundColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="72" width="343" height="100"/>
+                                <color key="backgroundColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4yw-a6-WHw"/>
                                 </constraints>
@@ -183,7 +178,7 @@
                                 </connections>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="W0s-aU-akD" firstAttribute="centerX" secondItem="1lE-ZQ-yFn" secondAttribute="centerX" id="4eg-r4-Ke2"/>
                             <constraint firstItem="W0s-aU-akD" firstAttribute="top" secondItem="1lE-ZQ-yFn" secondAttribute="bottom" constant="8" id="Gb2-Mh-Ac2"/>
@@ -220,7 +215,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Compose Tweet" id="TcX-GF-7Dr">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="hqz-Wd-bIz">
-                            <color key="tintColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelButtonClicked:" destination="e6W-JM-dCm" id="V3u-W2-BFO"/>
                             </connections>
@@ -244,25 +239,26 @@
                         <viewControllerLayoutGuide type="bottom" id="Vl8-WM-UIz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tAQ-5l-DJO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="57J-ef-jVI">
-                                <rect key="frame" x="33" y="41" width="332" height="236"/>
+                                <rect key="frame" x="86" y="50" width="203" height="178.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In to use Tweetie!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdK-ba-2Nm">
-                                        <rect key="frame" x="20" y="20" width="292" height="39"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="203" height="38.5"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="24"/>
-                                        <color key="textColor" red="0.94901961088180542" green="0.94117647409439087" blue="0.95686274766921997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.94901961088180542" green="0.94117647409439087" blue="0.95686274766921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="aWe-Dz-DQ3">
-                                        <rect key="frame" x="20" y="106" width="85" height="110"/>
+                                        <rect key="frame" x="0.0" y="68.5" width="203" height="110"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7kG-F9-cJS">
-                                                <rect key="frame" x="20" y="20" width="85" height="68"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="203" height="68"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G8c-xu-Y0S">
-                                                        <rect key="frame" x="20" y="20" width="292" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="203" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                         <connections>
@@ -270,7 +266,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AxO-0J-ZBj">
-                                                        <rect key="frame" x="21" y="58" width="292" height="30"/>
+                                                        <rect key="frame" x="0.0" y="38" width="203" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                         <connections>
@@ -302,9 +298,9 @@
                                                 </variation>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsj-3A-6MR">
-                                                <rect key="frame" x="143" y="107" width="47" height="30"/>
+                                                <rect key="frame" x="78" y="80" width="47" height="30"/>
                                                 <state key="normal" title="Sign In">
-                                                    <color key="titleColor" red="0.94901961088180542" green="0.94117647409439087" blue="0.95686274766921997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.94901961088180542" green="0.94117647409439087" blue="0.95686274766921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="signInClicked:" destination="MdU-hb-PTx" eventType="touchUpInside" id="1j5-3c-Msv"/>
@@ -335,25 +331,22 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="aWe-Dz-DQ3" secondAttribute="trailing" id="ALy-2a-TP4"/>
                                     <constraint firstItem="aWe-Dz-DQ3" firstAttribute="leading" secondItem="57J-ef-jVI" secondAttribute="leading" id="WQp-zd-afm"/>
-                                    <constraint firstAttribute="bottom" secondItem="aWe-Dz-DQ3" secondAttribute="bottom" id="ibV-Oz-M7f"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="ALy-2a-TP4"/>
                                         <exclude reference="WQp-zd-afm"/>
-                                        <exclude reference="ibV-Oz-M7f"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical">
                                     <mask key="constraints">
                                         <include reference="ALy-2a-TP4"/>
                                         <include reference="WQp-zd-afm"/>
-                                        <include reference="ibV-Oz-M7f"/>
                                     </mask>
                                 </variation>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.65098041296005249" green="0.55686277151107788" blue="0.71764707565307617" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.65098041296005249" green="0.55686277151107788" blue="0.71764707565307617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="57J-ef-jVI" firstAttribute="top" secondItem="i36-Hm-Xa3" secondAttribute="bottom" constant="30" id="DKm-42-fl8"/>
                             <constraint firstItem="57J-ef-jVI" firstAttribute="centerX" secondItem="tAQ-5l-DJO" secondAttribute="centerX" id="x1o-wB-mX9"/>
@@ -388,9 +381,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gOW-5u-4Fx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.49803921579999999" green="0.3960784376" blue="0.56862747670000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.49803921579999999" green="0.3960784376" blue="0.56862747670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -408,9 +401,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RXg-BV-ANa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.49803921579999999" green="0.3960784376" blue="0.56862747670000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.49803921579999999" green="0.3960784376" blue="0.56862747670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.94901961089999998" green="0.94117647410000005" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>

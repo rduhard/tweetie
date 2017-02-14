@@ -24,7 +24,7 @@ class SignInUseCaseTests: XCTestCase {
     }
 
     func test_SignIn_AuthorizedUser_ShouldCallSaveUser() {
-        let expectation = expectationWithDescription("Save User Called on Successful Sign In")
+        let expectation = self.expectation(description: "Save User Called on Successful Sign In")
         
         let usergateway = UserGatewaySpy()
         sut = SignInUseCase(gateway: usergateway)
@@ -40,7 +40,7 @@ class SignInUseCaseTests: XCTestCase {
     
     
     func test_SignIn_UnauthorizedUser_ShouldNotCallSaveUser() {
-        let expectation = expectationWithDescription("Save User not called on Unsuccessful Sign In")
+        let expectation = self.expectation(description: "Save User not called on Unsuccessful Sign In")
         
         let usergateway = UserGatewaySpy()
         sut = SignInUseCase(gateway: usergateway)
@@ -54,8 +54,8 @@ class SignInUseCaseTests: XCTestCase {
         XCTAssertFalse(usergateway.saveUserCalled)
     }
     
-    func test_SignIn_UnuthorizedUser_ShouldReturnError() {
-        let expectation = expectationWithDescription("Error returned on unsuccessful Sign In")
+    func test_SignIn_UnauthorizedUser_ShouldReturnError() {
+        let expectation = self.expectation(description: "Error returned on unsuccessful Sign In")
         
         let usergateway = UserGatewaySpy()
         sut = SignInUseCase(gateway: usergateway)
@@ -70,9 +70,9 @@ class SignInUseCaseTests: XCTestCase {
         XCTAssert(signInError == .InvalidCredentials)
     }
 
-    private func waitForExpectation() {
+    fileprivate func waitForExpectation() {
         
-        waitForExpectationsWithTimeout(3, handler: nil)
+        waitForExpectations(timeout: 3, handler: nil)
     }
 }
 
@@ -81,7 +81,7 @@ class UserGatewaySpy: UserGateway {
     var saveUserCalled = false
     var removeCurrentUserCalled = true
     
-    func saveUser(user: User) {
+    func saveUser(_ user: User) {
         saveUserCalled = true
         return
     }

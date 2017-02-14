@@ -12,21 +12,11 @@ extension ComposeTweetPresenter: ComposeTweetInteractorOutput { }
 
 class ComposeTweetConfigurator
 {
-  
-    class var sharedInstance: ComposeTweetConfigurator {
-        struct Static {
-            static var instance: ComposeTweetConfigurator?
-            static var token: dispatch_once_t = 0
-        }
+    static let sharedInstance = ComposeTweetConfigurator()
     
-        dispatch_once(&Static.token) {
-            Static.instance = ComposeTweetConfigurator()
-        }
-    
-        return Static.instance!
-    }
-    
-    func configure(viewController: ComposeTweetViewController) {
+    private init() {}
+
+    func configure(_ viewController: ComposeTweetViewController) {
     
         let presenter = ComposeTweetPresenter()
         presenter.output = viewController

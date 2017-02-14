@@ -9,12 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>OHHTTPStubs.xcscheme</key>
+		<key>Pods-Tweetie.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Tweetie.xcscheme</key>
+		<key>Pods-TweetieTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7BB17359068A26BB1EF61653A3E7C9A3</key>
+		<key>4551A02DCD158A5143D803E0FE76C4F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>819D98B2274D0D02398DA2FD14346272</key>
+		<key>82986876741847D0607C606F5F9F5164</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A48457AE48E3880BF6B28578E4A10FF0</key>
+		<key>98CC12EEDCA0ADE298C62268125E8304</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D5CB1AF743FA1ECEDECA9CB0B75E265F</key>
+		<key>C1A31E0EF57170806CBE01ACD2D5A142</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCB45C0AF8651B0CC72E303D3F242439</key>
+		<key>D0F1222D5067247B61B445FF5B39980F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

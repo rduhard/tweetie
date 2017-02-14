@@ -5,30 +5,30 @@
 import BrightFutures
 
 protocol RecentTweetsPresenterInput {
-    func presentTweets(response: RecentTweets.Response)
-    func presentSignOut(response: RecentTweets.SignOut.Response)
+    func presentTweets(_ response: RecentTweets.Response)
+    func presentSignOut(_ response: RecentTweets.SignOut.Response)
 }
 
 protocol RecentTweetsPresenterOutput: class {
-    func displayTweets(viewModel: RecentTweets.ViewModel)
+    func displayTweets(_ viewModel: RecentTweets.ViewModel)
     func displayLogin()
-    func signedOut(viewModel: RecentTweets.ViewModel)
+    func signedOut(_ viewModel: RecentTweets.ViewModel)
 }
 
 
 class RecentTweetsPresenter: RecentTweetsPresenterInput {
     weak var output: RecentTweetsPresenterOutput!
-    let dateFormatter: NSDateFormatter
+    let dateFormatter: DateFormatter
     
     init() {
-        dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
     }
     
-    func presentTweets(response: RecentTweets.Response) {
-        Queue.main.async {
-            if response.error == .NotAuthorized {
+    func presentTweets(_ response: RecentTweets.Response) {
+        DispatchQueue.main.async {
+            if response.error == .notAuthorized {
                 self.output.displayLogin()
             }
             let viewModel = RecentTweets.ViewModel(tweets: self.prepareTweetItems(response))
@@ -37,12 +37,12 @@ class RecentTweetsPresenter: RecentTweetsPresenterInput {
         }
     }
     
-    func presentSignOut(response: RecentTweets.SignOut.Response) {
+    func presentSignOut(_ response: RecentTweets.SignOut.Response) {
         let viewModel = RecentTweets.ViewModel(tweets: [])
         output.signedOut(viewModel)
     }
     
-    private func prepareTweetItems(response: RecentTweets.Response) -> [RecentTweets.ViewModel.ViewableTweetItem] {
+    fileprivate func prepareTweetItems(_ response: RecentTweets.Response) -> [RecentTweets.ViewModel.ViewableTweetItem] {
         var items: [RecentTweets.ViewModel.ViewableTweetItem] = []
         for item in response.tweets {
             items.append(RecentTweets.ViewModel.ViewableTweetItem(name: "\(item.tweeter.firstName) \(item.tweeter.lastName)", username: item.tweeter.username, tweet: item.tweet, timestamp: formatTime(item.timestamp)))
@@ -50,9 +50,9 @@ class RecentTweetsPresenter: RecentTweetsPresenterInput {
         return items
     }
     
-    private func formatTime(timeInterval: NSTimeInterval) -> String {
-        let date = NSDate(timeIntervalSince1970: timeInterval)
-        let dateString = dateFormatter.stringFromDate(date)
+    fileprivate func formatTime(_ timeInterval: TimeInterval) -> String {
+        let date = Date(timeIntervalSince1970: timeInterval)
+        let dateString = dateFormatter.string(from: date)
         return dateString
     }
 }

@@ -7,24 +7,24 @@ import Foundation
 
 class UserDefaultsUserGateway: UserGateway {
     
-    func saveUser(user: User) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setObject(user.dictionaryDescription, forKey: "loggedInUser")
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "userLoggedInKey")
+    func saveUser(_ user: User) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(user.dictionaryDescription, forKey: "loggedInUser")
+        UserDefaults.standard.set(true, forKey: "userLoggedInKey")
         userDefaults.synchronize()
 
     }
     
     func fetchCurrentUser() -> User? {
         
-        guard let userDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey("loggedInUser") else {
+        guard let userDictionary = UserDefaults.standard.dictionary(forKey: "loggedInUser") else {
             return nil
         }
-        return User(dictionary: userDictionary)
+        return User(dictionary: userDictionary as [String : AnyObject])
     }
     
     func removeCurrentUser() {
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "userLoggedInKey")
+        UserDefaults.standard.set(false, forKey: "userLoggedInKey")
 
     }
 }

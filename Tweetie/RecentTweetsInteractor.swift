@@ -5,14 +5,14 @@
 import BrightFutures
 
 protocol RecentTweetsInteractorInput {
-    func loadTweets(request: RecentTweets.Request)
-    func refreshTweets(request: RecentTweets.Request)
-    func signOut(request: RecentTweets.SignOut.Request)
+    func loadTweets(_ request: RecentTweets.Request)
+    func refreshTweets(_ request: RecentTweets.Request)
+    func signOut(_ request: RecentTweets.SignOut.Request)
 }
 
 protocol RecentTweetsInteractorOutput {
-    func presentTweets(response: RecentTweets.Response)
-    func presentSignOut(response: RecentTweets.SignOut.Response)
+    func presentTweets(_ response: RecentTweets.Response)
+    func presentSignOut(_ response: RecentTweets.SignOut.Response)
 }
 
 
@@ -20,35 +20,35 @@ class RecentTweetsInteractor: RecentTweetsInteractorInput {
     var output: RecentTweetsInteractorOutput!
     var worker: TweetsWorker!
   
-    func loadTweets(request: RecentTweets.Request) {
+    func loadTweets(_ request: RecentTweets.Request) {
        
         guard authorizedUser() else {
-            let response = RecentTweets.Response(tweets: [], error: .NotAuthorized)
+            let response = RecentTweets.Response(tweets: [], error: .notAuthorized)
             self.output.presentTweets(response)
             return
         }
         
-        Queue.global.async() {
+        DispatchQueue.global().async {
             
             self.worker = TweetsWorker(gateway: UserDefaultsTweetGateway())
             self.worker.fetchLocalTweets() { tweets in
                 
-                let response = RecentTweets.Response(tweets: tweets, error: .NoError)
+                let response = RecentTweets.Response(tweets: tweets, error: .noError)
                 self.output.presentTweets(response)
             }
         }
 
     }
         
-    func refreshTweets(request: RecentTweets.Request) {
+    func refreshTweets(_ request: RecentTweets.Request) {
         
         guard authorizedUser() else {
-            let response = RecentTweets.Response(tweets: [], error: .NotAuthorized)
+            let response = RecentTweets.Response(tweets: [], error: .notAuthorized)
             self.output.presentTweets(response)
             return
         }
         
-        Queue.global.async() {
+        DispatchQueue.global().async {
             
             self.worker = TweetsWorker(gateway: UserDefaultsTweetGateway())
             self.worker.syncRemoteTweets() { (error) in
@@ -63,14 +63,14 @@ class RecentTweetsInteractor: RecentTweetsInteractorInput {
         }
     }
     
-    func signOut(request: RecentTweets.SignOut.Request) {
+    func signOut(_ request: RecentTweets.SignOut.Request) {
         let signout = SignOutUseCase(usergateway: UserDefaultsUserGateway(), tweetGateway: UserDefaultsTweetGateway())
         signout.signOut()
         let response = RecentTweets.SignOut.Response()
         output.presentSignOut(response)
     }
     
-    private func authorizedUser() -> Bool {
-        return NSUserDefaults.standardUserDefaults().boolForKey("userLoggedInKey")
+    fileprivate func authorizedUser() -> Bool {
+        return UserDefaults.standard.bool(forKey: "userLoggedInKey")
     }
 }

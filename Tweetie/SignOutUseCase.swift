@@ -18,7 +18,7 @@ class SignOutUseCase {
         clearLocalData()
     }
     
-    private func clearLocalData() {
+    fileprivate func clearLocalData() {
         userGateway.removeCurrentUser()
         tweetGateway.clearData()
     }

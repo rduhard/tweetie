@@ -6,11 +6,11 @@
 import UIKit
 
 protocol ComposeTweetViewControllerInput {
-    func displayTweetResponse(viewModel: ComposeTweet.ViewModel)
+    func displayTweetResponse(_ viewModel: ComposeTweet.ViewModel)
 }
 
 protocol ComposeTweetViewControllerOutput {
-    func sendTweet(request: ComposeTweet.Request)
+    func sendTweet(_ request: ComposeTweet.Request)
 }
 
 
@@ -37,11 +37,11 @@ class ComposeTweetViewController: UIViewController {
         textView.becomeFirstResponder()
     }
     
-    @IBAction func cancelButtonClicked(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelButtonClicked(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func sendTweetClicked(sender: AnyObject) {
+    @IBAction func sendTweetClicked(_ sender: AnyObject) {
         output.sendTweet(ComposeTweet.Request(tweetText: textView.text))
     }
   
@@ -50,7 +50,7 @@ class ComposeTweetViewController: UIViewController {
 
 
 extension ComposeTweetViewController: ComposeTweetViewControllerInput {
-    func displayTweetResponse(viewModel: ComposeTweet.ViewModel) {
+    func displayTweetResponse(_ viewModel: ComposeTweet.ViewModel) {
         guard viewModel.error?.isEmpty != nil else {
             displayTweetError(viewModel.error!)
             return
@@ -59,34 +59,34 @@ extension ComposeTweetViewController: ComposeTweetViewControllerInput {
         tweetSentSuccessfully()
     }
     
-    private func tweetSentSuccessfully() {
-        dismissViewControllerAnimated(true, completion: nil)
+    fileprivate func tweetSentSuccessfully() {
+        dismiss(animated: true, completion: nil)
     }
     
-    private func displayTweetError(errorText: String) {
-        let alert = UIAlertController(title: "Uh Oh!", message: errorText, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        presentViewController(alert, animated: true, completion: nil)
+    fileprivate func displayTweetError(_ errorText: String) {
+        let alert = UIAlertController(title: "Uh Oh!", message: errorText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
 
 extension ComposeTweetViewController: UITextViewDelegate {
     
-    func textViewDidChange(textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         if textView.text.characters.count > 0 {
-            tweetButton.enabled = true
+            tweetButton.isEnabled = true
         } else {
-            tweetButton.enabled = false
+            tweetButton.isEnabled = false
         }
         
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         return isMaxCharacterCountReached(range, text: text)
     }
     
-    private func isMaxCharacterCountReached(range: NSRange, text: String) -> Bool {
+    fileprivate func isMaxCharacterCountReached(_ range: NSRange, text: String) -> Bool {
         
         let charCount = textView.text.characters.count
         if range.length + range.location > charCount {

@@ -8,14 +8,14 @@ import UIKit
 protocol RecentTweetsViewControllerInput {
     var tweetData: RecentTweets.ViewModel? { get set }
     
-    func displayTweets(tweets: RecentTweets.ViewModel)
-    func signedOut(tweets: RecentTweets.ViewModel)
+    func displayTweets(_ tweets: RecentTweets.ViewModel)
+    func signedOut(_ tweets: RecentTweets.ViewModel)
 }
 
 protocol RecentTweetsViewControllerOutput {
-    func loadTweets(request: RecentTweets.Request)
-    func refreshTweets(request: RecentTweets.Request)
-    func signOut(request: RecentTweets.SignOut.Request)
+    func loadTweets(_ request: RecentTweets.Request)
+    func refreshTweets(_ request: RecentTweets.Request)
+    func signOut(_ request: RecentTweets.SignOut.Request)
 }
 
 class RecentTweetsViewController: UITableViewController {
@@ -36,33 +36,33 @@ class RecentTweetsViewController: UITableViewController {
         fetchTweetsOnLoad()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshTweets()
     }
     
-    private func configureTableView() {
+    fileprivate func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
     }
     
-    private func fetchTweetsOnLoad() {
+    fileprivate func fetchTweetsOnLoad() {
         let request = RecentTweets.Request()
         output.loadTweets(request)
 
     }
     
-    private func refreshTweets() {
+    fileprivate func refreshTweets() {
         let request = RecentTweets.Request()
         output.refreshTweets(request)
     }
     
-    @IBAction func signOutClicked(sender: AnyObject) {
+    @IBAction func signOutClicked(_ sender: AnyObject) {
         let request = RecentTweets.SignOut.Request()
         output.signOut(request)
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let tweetData = tweetData else {
             return 0
         }
@@ -70,28 +70,28 @@ class RecentTweetsViewController: UITableViewController {
         return tweetData.tweetCount
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tweetItem = tweetData?.tweets[indexPath.row] else {
             return TweetCell()
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("TweetCellIdentifier") as! TweetCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCellIdentifier") as! TweetCell
         cell.populate(tweetItem)
         
         return cell
     }
     
-    private func showLogin() {
+    fileprivate func showLogin() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let signInViewController = storyboard.instantiateViewControllerWithIdentifier("SignInViewController")
-        presentViewController(signInViewController, animated: true, completion: nil)
+        let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
+        present(signInViewController, animated: true, completion: nil)
     }
     
 }
 
 extension RecentTweetsViewController:  RecentTweetsViewControllerInput {
     
-    func displayTweets(tweets: RecentTweets.ViewModel) {
+    func displayTweets(_ tweets: RecentTweets.ViewModel) {
         tweetData = tweets
         tableView.reloadData()
     }
@@ -100,7 +100,7 @@ extension RecentTweetsViewController:  RecentTweetsViewControllerInput {
         showLogin()
     }
     
-    func signedOut(tweets: RecentTweets.ViewModel) {
+    func signedOut(_ tweets: RecentTweets.ViewModel) {
         tweetData = tweets
         showLogin()
         tableView.reloadData()

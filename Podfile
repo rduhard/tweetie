@@ -6,10 +6,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Tweetie' do
 
-pod 'OHHTTPStubs' # Default subspecs, including support for NSURLSession & JSON etc
-pod 'OHHTTPStubs/Swift' # Adds the Swiftier API wrapper too
-pod 'BrightFutures', '4.0.0'
-pod 'SwiftyJSON', '2.4.0'
+pod 'BrightFutures', '5.1.0'
+pod 'SwiftyJSON', '3.1.4'
 
 end
 

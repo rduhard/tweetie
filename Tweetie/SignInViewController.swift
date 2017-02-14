@@ -6,12 +6,12 @@ import UIKit
 
 protocol SignInViewControllerInput
 {
-  func displaySignInResult(viewModel: SignIn.ViewModel)
+  func displaySignInResult(_ viewModel: SignIn.ViewModel)
 }
 
 protocol SignInViewControllerOutput
 {
-  func signIn(request: SignIn.Request)
+  func signIn(_ request: SignIn.Request)
 }
 
 class SignInViewController: UIViewController, SignInViewControllerInput
@@ -31,23 +31,23 @@ class SignInViewController: UIViewController, SignInViewControllerInput
         super.viewDidLoad()
     }
   
-    func displaySignInResult(viewModel: SignIn.ViewModel) {
+    func displaySignInResult(_ viewModel: SignIn.ViewModel) {
     
         guard viewModel.error.isEmpty else {
-            let alert = UIAlertController(title: "Oops", message: viewModel.error, preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            presentViewController(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: "Oops", message: viewModel.error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
             return
         }
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func signInClicked(sender: AnyObject) {
+    @IBAction func signInClicked(_ sender: AnyObject) {
         signIn()
     }
     
-    private func signIn() {
+    fileprivate func signIn() {
         
         let request = SignIn.Request(username: usernameField.text ?? "", password: passwordField.text ?? "")
         output.signIn(request)
@@ -56,7 +56,7 @@ class SignInViewController: UIViewController, SignInViewControllerInput
 }
 
 extension SignInViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == usernameField {
             passwordField.becomeFirstResponder()
         } else {

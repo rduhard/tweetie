@@ -16,7 +16,7 @@ class TweetCell: UITableViewCell {
 
 extension TweetCell {
     
-    func populate(tweetItem: RecentTweets.ViewModel.ViewableTweetItem) {
+    func populate(_ tweetItem: RecentTweets.ViewModel.ViewableTweetItem) {
         name.text = tweetItem.name
         username.text = tweetItem.username
         tweet.text = tweetItem.tweet

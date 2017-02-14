@@ -15,7 +15,7 @@ class UserTests: XCTestCase {
         super.setUp()
         
         user = User(username: "username", firstname: "firstname", lastname: "lastname", verified: true)
-        userDict = ["username": "username", "firstname": "firstname", "lastname": "lastname", "verified": true]
+        userDict = ["username": "username" as AnyObject, "firstname": "firstname" as AnyObject, "lastname": "lastname" as AnyObject, "verified": true as AnyObject]
         sut = user
     }
     

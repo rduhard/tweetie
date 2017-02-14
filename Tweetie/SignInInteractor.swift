@@ -6,20 +6,20 @@
 import BrightFutures
 
 protocol SignInInteractorInput {
-  func signIn(request: SignIn.Request)
+  func signIn(_ request: SignIn.Request)
 }
 
 protocol SignInInteractorOutput {
-  func presentSignInResponse(response: SignIn.Response)
+  func presentSignInResponse(_ response: SignIn.Response)
 }
 
 class SignInInteractor: SignInInteractorInput {
     
     var output: SignInInteractorOutput!
   
-    func signIn(request: SignIn.Request) {
+    func signIn(_ request: SignIn.Request) {
     
-        Queue.global.async() {
+        DispatchQueue.global().async {
             
             let signInUC = SignInUseCase(gateway: UserDefaultsUserGateway())
             signInUC.signIn(request.username, password: request.password) { error in

@@ -8,11 +8,11 @@ import BrightFutures
 import SwiftyJSON
 
 enum TweetsError: String {
-    case NoError = ""
-    case NotAuthorized = "You are not authorized"
-    case NetworkError = "Unable to retrieve tweets due to a Network error. Please try again"
-    case FetchError = "Unable to fetch local data, please try again"
-    case UnknownError = "Unable to retrieve tweets due to an unknown error. Please try again"
+    case noError = ""
+    case notAuthorized = "You are not authorized"
+    case networkError = "Unable to retrieve tweets due to a Network error. Please try again"
+    case fetchError = "Unable to fetch local data, please try again"
+    case unknownError = "Unable to retrieve tweets due to an unknown error. Please try again"
 }
 
 class TweetsWorker {
@@ -23,42 +23,42 @@ class TweetsWorker {
         self.gateway = gateway
     }
 
-    func fetchLocalTweets(completionHandler: ([Tweet] -> Void)) {
+    func fetchLocalTweets(_ completionHandler: (([Tweet]) -> Void)) {
         
         gateway.fetchAllTweets() { (localTweets, error) in
             completionHandler(localTweets)
         }
     }
     
-    func syncRemoteTweets(completionHandler: (TweetsError -> Void)) {
+    func syncRemoteTweets(_ completionHandler: @escaping ((TweetsError) -> Void)) {
         
         let newTweets = fetchNewTweets()
-        NSUserDefaults.standardUserDefaults().setDouble(NSDate().timeIntervalSince1970, forKey: "lastFetchTime")
+        UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: "lastFetchTime")
         //simulate network response time (2 seconds to make it noticable)
-        Queue.global.after(.In(2)) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(2)) {
             self.gateway.saveTweets(newTweets)
-            completionHandler( .NoError)
+            completionHandler( .noError)
         }
         
     }
     
-    func sendTweet(tweet: Tweet, completionHandler: (TweetsError -> Void)) {
+    func sendTweet(_ tweet: Tweet, completionHandler: @escaping ((TweetsError) -> Void)) {
         //simulate network response time (1 second)
-        Queue.global.after(.In(1)) {
-            completionHandler(.NoError)
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
+            completionHandler(.noError)
         }
     }
     
-    func saveTweet(tweet: Tweet, completionHandler: (Void -> Void)) {
+    func saveTweet(_ tweet: Tweet, completionHandler: ((Void) -> Void)) {
         completionHandler(gateway.saveTweet(tweet))
     }
     
     
-    private func fetchNewTweets() -> [Tweet] {
-        let lastFetchTime = NSUserDefaults.standardUserDefaults().doubleForKey("lastFetchTime")
+    fileprivate func fetchNewTweets() -> [Tweet] {
+        let lastFetchTime = UserDefaults.standard.double(forKey: "lastFetchTime")
         
-        let mockRemoteTweetsFilePathOlder = NSBundle.mainBundle().pathForResource("tweetsRemote", ofType: "json")
-        let mockRemoteTweetsFilePathNewer = NSBundle.mainBundle().pathForResource("tweetsRemote2", ofType: "json")
+        let mockRemoteTweetsFilePathOlder = Bundle.main.path(forResource: "tweetsRemote", ofType: "json")
+        let mockRemoteTweetsFilePathNewer = Bundle.main.path(forResource: "tweetsRemote2", ofType: "json")
         
         guard lastFetchTime != 0 else {
             return loadMockRemoteData(mockRemoteTweetsFilePathOlder)
@@ -68,12 +68,12 @@ class TweetsWorker {
         
     }
     
-    private func loadMockRemoteData(path: String?) -> [Tweet] {
+    fileprivate func loadMockRemoteData(_ path: String?) -> [Tweet] {
         
         guard let path  = path else {
             return []
         }
-        guard let jsonData = try? NSData(contentsOfFile: path, options: []) else {
+        guard let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path), options: []) else {
             return []
         }
         
@@ -81,12 +81,12 @@ class TweetsWorker {
         
     }
     
-    private func createTweetsFromData(jsonData: NSData) -> [Tweet] {
+    fileprivate func createTweetsFromData(_ jsonData: Data) -> [Tweet] {
         let json = JSON(data: jsonData)
         return tweetsFromDictionary(json)
     }
     
-    private func tweetsFromDictionary(json: JSON) -> [Tweet] {
+    fileprivate func tweetsFromDictionary(_ json: JSON) -> [Tweet] {
         var allTweets: [Tweet] = []
         for tweet in json.arrayValue {
             
@@ -94,6 +94,6 @@ class TweetsWorker {
             allTweets.append(Tweet(tweetId: tweet["guid"].stringValue, tweeter: tweeter, tweet: tweet["tweet"].stringValue, timestamp: tweet["timestamp"].doubleValue))
         }
         
-        return allTweets.sort { $0.timestamp > $1.timestamp }
+        return allTweets.sorted { $0.timestamp > $1.timestamp }
     }
 }

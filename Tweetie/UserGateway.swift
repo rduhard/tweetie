@@ -4,7 +4,7 @@
 //
 
 protocol UserGateway {
-    func saveUser(user: User)
+    func saveUser(_ user: User)
     func fetchCurrentUser() -> User?
     func removeCurrentUser()
 }

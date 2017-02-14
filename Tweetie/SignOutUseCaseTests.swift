@@ -38,9 +38,9 @@ class TweetGatewaySpy: TweetGateway {
     
     var clearDataCalled = false
     
-    func fetchAllTweets(completionHandler: ([Tweet], TweetsError) -> Void) {}
-    func saveTweets(tweets: [Tweet]) {}
-    func saveTweet(tweet: Tweet) {}
+    func fetchAllTweets(_ completionHandler: ([Tweet], TweetsError) -> Void) {}
+    func saveTweets(_ tweets: [Tweet]) {}
+    func saveTweet(_ tweet: Tweet) {}
     func clearData() {
         clearDataCalled = true
     }
